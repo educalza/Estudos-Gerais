@@ -5,55 +5,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora</title>
-    <style>
-        *{
-            margin: 0;
-            padding: 0;
-        }
-        .fundo{
-            
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <div class="fundo">
         <h1>Eduardo Alves Calza</h1>
-        <div class="calculadora"></div> <!-- classe serve para utilizar a div em CSS ou em JS -->
+        <div class="calculadora"> <!-- classe serve para utilizar a div em CSS ou em JS -->
             <h1>Calculadora</h1>
-            <p id="resultado"> </p> <!-- id é usado no JS para printar o resultado no id reusultado -->
+            <p id="resultado"></p> <!-- id é usado no JS para printar o resultado no id reusultado -->
             <table> <!-- Tabela -->
                 <tr> <!-- Linha -->
                     <td> <!-- Célula de dados na tabela -->
-                        <button>C</button>
+                        <button class="botao" onclick="clean()">C</button>
                     </td>
-                    <td><button><</button></td>
-                    <td><button>/</button></td>
-                    <td><button>x</button></td>
+                    <td><button class="botao" onclick="apagar()"><</button></td>
+                    <td><button class="botao" onclick="parameters('/')">/</button></td>
+                    <td><button class="botao" onclick="parameters('*')">x</button></td>
                 </tr> 
                 <tr>
-                    <td><button>7</button></td>
-                    <td><button>8</button></td>
-                    <td><button>9</button></td>
-                    <td><button>-</button></td>
+                    <td><button class="botao" onclick="insert('7')">7</button></td>
+                    <td><button class="botao" onclick="insert('8')">8</button></td>
+                    <td><button class="botao" onclick="insert('9')">9</button></td>
+                    <td><button class="botao" onclick="parameters('-')">-</button></td>
                 </tr>
                 <tr>
-                    <td><button>4</button></td>
-                    <td><button>5</button></td>
-                    <td><button>6</button></td>
-                    <td><button>+</button></td>
+                    <td><button class="botao" onclick="insert('4')">4</button></td>
+                    <td><button class="botao" onclick="insert('5')">5</button></td>
+                    <td><button class="botao" onclick="insert('6')">6</button></td>
+                    <td><button class="botao" onclick="parameters('+')">+</button></td>
                 </tr>
                 <tr>
-                    <td><button>1</button></td>
-                    <td><button>2</button></td>
-                    <td><button>3</button></td>
-                    <td rowspan="2"><button>=</button></td> <!-- rowspan aumenta a quantidade de linha que ele ocupa -->
+                    <td><button class="botao" onclick="insert('1')">1</button></td>
+                    <td><button class="botao" onclick="insert('2')">2</button></td>
+                    <td><button class="botao" onclick="insert('3')">3</button></td>
+                    <td rowspan="2"><button class="botao" style="height: 104px;" onclick="calcular()">=</button></td> <!-- rowspan aumenta a quantidade de linha que ele ocupa -->
                 </tr>
                 <tr>
-                    <td colspan="2"><button>0</button></td> <!-- colspan aumenta a quantidade de colunas que ele ocupa -->
-                    <td><button>.</button></td>
+                    <td colspan="2"><button class="botao" style="width: 104px;" onclick="insert('0')">0</button></td> <!-- colspan aumenta a quantidade de colunas que ele ocupa -->
+                    <td><button class="botao" onclick="parameters('.')">.</button></td>
                 </tr>
             </table>
         </div>
+        <script src="script.js"></script> <!-- Adiciona o arquivo js -->
     </body>
     </html>
